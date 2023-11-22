@@ -11,30 +11,26 @@ jobs:
     - name: Hello world       # Name of step
       run: echo 'Hello world' # Command to run
 
-    # - name: Hello world
-    #   uses: actions/hello-world-javascript-action@v1.1 # Name of the action. This uses https://github.com/actions/hello-world-javascript-action
-    #   with:                                            # This section is needed if you need to pass arguments to the action
-    #     who-to-greet: 'Mona the Octocat'
-
-    - name: Builds the C# code. # ..\project folder
+    - name: Builds the C# code. 
       run: dotnet build
+      # ..\project folder
 
-    - name: Runs the C# tests. # ..\project folder
+    - name: Runs the C# tests.
       run: dotnet test
+      # ..\project folder
 
-    - name: Builds the TypeScript code. # = npm install + npm run build ..\DotnetTemplate.Web
+    - name: Builds the TypeScript code - part 1.
       run: npm install
       working-directory: ./DotnetTemplate.Web
 
-    - name: Builds the TypeScript code. # = npm install + npm run build ..\DotnetTemplate.Web
-      working-directory: ./DotnetTemplate.Web  
+    - name: Builds the TypeScript code - part 2.
       run: npm run build
+      working-directory: ./DotnetTemplate.Web
       
-    - name: Runs the linter on the TypeScript code. #= npm run lint ..\DotnetTemplate.Web
+    - name: Runs the linter on the TypeScript code.
       run: npm run lint
       working-directory: ./DotnetTemplate.Web  
 
-    - name: Runs the TypeScript tests. #= npm t ..\DotnetTemplate.Web
+    - name: Runs the TypeScript tests.
       run: npm t
       working-directory: ./DotnetTemplate.Web
-
