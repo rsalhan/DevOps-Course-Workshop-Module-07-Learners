@@ -19,8 +19,8 @@ jobs:
     - name: Builds the C# code. # ..\project folder
       run: dotnet build
 
-    # - name: Runs the C# tests. # ..\project folder
-    #   run: dotnet test
+    - name: Runs the C# tests. # ..\project folder
+      run: dotnet test
 
     # - name: Builds the TypeScript code. # = npm install + npm run build ..\DotnetTemplate.Web
     #   run: 
