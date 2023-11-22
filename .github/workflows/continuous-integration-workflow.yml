@@ -30,10 +30,11 @@ jobs:
       working-directory: ./DotnetTemplate.Web  
       run: npm run build
       
+    - name: Runs the linter on the TypeScript code. #= npm run lint ..\DotnetTemplate.Web
+      run: npm run lint
+      working-directory: ./DotnetTemplate.Web  
 
-    # - name: Runs the linter on the TypeScript code. #= npm run lint ..\DotnetTemplate.Web
-    #   run: npm run lint
-
-    # - name: Runs the TypeScript tests. #= npm t ..\DotnetTemplate.Web
-    #   run: npm t
+    - name: Runs the TypeScript tests. #= npm t ..\DotnetTemplate.Web
+      run: npm t
+      working-directory: ./DotnetTemplate.Web
 
