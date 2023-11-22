@@ -26,6 +26,11 @@ jobs:
       run: npm install
       working-directory: ./DotnetTemplate.Web
 
+    - name: Builds the TypeScript code. # = npm install + npm run build ..\DotnetTemplate.Web
+      working-directory: ./DotnetTemplate.Web  
+      run: npm run build
+      
+
     # - name: Runs the linter on the TypeScript code. #= npm run lint ..\DotnetTemplate.Web
     #   run: npm run lint
 
