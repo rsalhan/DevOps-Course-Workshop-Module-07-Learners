@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
 
     stages {
         stage('Checkout') {
@@ -17,6 +17,8 @@ pipeline {
                 sh("dotnet test")
             }
         }
+    }
+    stages {
         stage('Builds the TypeScript code - part 1.') {
             steps {
                 dir('./DotnetTemplate.Web')
